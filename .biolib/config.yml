@@ -12,9 +12,16 @@ modules:
 main_output_file: /output.md
 arguments:
     -
-        key: '--sequence'
+        key: '--fasta'
         key_value_separator: ' '
-        default_value: ''
+        default_value: 'example.fasta'
         description: 'Add sequence or sequences to score in FASTA format'
+        required: true
+        type: text-file
+    -
+        key: '--pdb'
+        key_value_separator: ' '
+        default_value: 'example.pdb'
+        description: 'Add protein geometry to score from in PDB format'
         required: true
         type: text-file

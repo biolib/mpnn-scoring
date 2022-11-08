@@ -1,0 +1,20 @@
+biolib_version: 2
+modules:
+    main:
+        image: 'local-docker://mpnn-score:latest'
+        command: python3 run.py
+        working_directory: /home/biolib/
+        input_files:
+            - COPY / /home/biolib/
+        output_files:
+            - COPY /home/biolib/output/ /
+        gpu: required
+main_output_file: /output.md
+arguments:
+    -
+        key: '--sequence'
+        key_value_separator: ' '
+        default_value: ''
+        description: 'Add sequence or sequences to score in FASTA format'
+        required: true
+        type: text-file

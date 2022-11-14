@@ -3,6 +3,7 @@ from pathlib import Path
 import argparse
 from collections import defaultdict
 import json
+import os
 from colabdesign.mpnn import mk_mpnn_model
 
 
